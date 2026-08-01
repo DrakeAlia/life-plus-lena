@@ -112,14 +112,20 @@ body {
 .lpl-hero-side{display:flex;flex-direction:column;justify-content:center;text-align:center;}
 
 /* ---------- buttons ---------- */
-.lpl-btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;
+.lpl a.lpl-btn,
+.lpl button.lpl-btn,
+.lpl .lpl-btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;
   margin-top:30px;padding:0 34px;width:auto;background:#E8E0D4;color:#221D18;
   border:1px solid rgba(34,29,24,.12);font-family:var(--utility);font-size:.7rem;font-weight:400;
   letter-spacing:.18em;text-transform:uppercase;cursor:pointer;
   transition:background .4s ease,color .4s ease,border-color .4s ease;}
-.lpl-btn:hover{background:var(--clay);color:var(--parchment);border-color:var(--clay);}
-.lpl-btn-dark{background:var(--espresso);color:var(--parchment);}
-.lpl-btn-dark:hover{background:var(--clay);}
+.lpl a.lpl-btn:hover,
+.lpl button.lpl-btn:hover,
+.lpl .lpl-btn:hover{background:var(--clay);color:var(--parchment);border-color:var(--clay);}
+.lpl a.lpl-btn-dark,
+.lpl button.lpl-btn-dark{background:#221D18;color:#F3EEE6;}
+.lpl a.lpl-btn-dark:hover,
+.lpl button.lpl-btn-dark:hover{background:var(--clay);}
 
 /* ---------- the science behind beautiful living ---------- */
 .lpl-sci{margin-top:clamp(30px,3.4vw,48px);
@@ -254,9 +260,11 @@ body {
 .lpl-contact-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(34px,5vw,80px);
   align-items:start;}
 .lpl-contact h2{font-size:clamp(2rem,3.4vw,2.9rem);max-width:15ch;}
-.lpl-detail{display:flex;align-items:center;gap:12px;margin-top:14px;min-height:44px;
+.lpl a.lpl-detail,
+.lpl .lpl-detail{display:flex;align-items:center;gap:12px;margin-top:14px;min-height:44px;
   font-family:var(--utility);font-size:.92rem;color:rgba(243,238,230,.82);}
-.lpl-detail svg{color:var(--clay);flex:0 0 auto;}
+.lpl a.lpl-detail svg,
+.lpl .lpl-detail svg{color:var(--clay);flex:0 0 auto;}
 .lpl-field{display:flex;flex-direction:column;gap:8px;margin-bottom:22px;}
 .lpl-field label{font-family:var(--utility);font-size:.62rem;letter-spacing:.2em;
   text-transform:uppercase;color:rgba(243,238,230,.55);}
