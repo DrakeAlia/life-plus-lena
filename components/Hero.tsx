@@ -19,7 +19,9 @@ export default function Hero() {
             priority
             sizes="100vw"
             quality={85}
-            style={{ objectFit: "cover", objectPosition: "center" }}
+            placeholder="blur"
+            blurDataURL="data:image/webp;base64,UklGRjIAAABXRUJQVlA4ICYAAACQAQCdASoKAAYAAUAmJaQAA3AA/v3xgAAA"
+            className="lpl-hero-img"
           />
         </motion.div>
 
