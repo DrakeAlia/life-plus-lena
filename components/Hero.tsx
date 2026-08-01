@@ -13,14 +13,14 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 1.06 }} animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.6 }}>
           <Image
-            src="/images/hero-lena.webp"
+            src="/images/hero-lena-v2.webp"
             alt=""
             fill
             priority
             sizes="100vw"
             quality={85}
             placeholder="blur"
-            blurDataURL="data:image/webp;base64,UklGRjIAAABXRUJQVlA4ICYAAACQAQCdASoKAAYAAUAmJaQAA3AA/v3xgAAA"
+            blurDataURL="data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAACwAgCdASoKAAYAAUAmJZwCdAD0SZNgAAD+9L+Fqi8uj7mCNn8BXL7Y1g7rZPyWRPJmB5hV7mxCUKg4kWDZHd3zFxphE/oWIww8kQ63p8uGpFQyN2Jbq+s3pJWUXKFqEYF1YPlAAA=="
             className="lpl-hero-img"
           />
         </motion.div>
