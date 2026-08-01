@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/sheet";
 
 const slug = (s: string) => s.toLowerCase().replace(/\s+/g, "-");
+const getNavHref = (nav: string) => (nav === "Home" ? "#top" : `#${slug(nav)}`);
 
 export default function Navigation() {
   return (
@@ -22,7 +23,7 @@ export default function Navigation() {
       </motion.a>
       <motion.div className="lpl-links"
         initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 0.35 }}>
-        {NAV.map((n) => <a key={n} href={`#${slug(n)}`}>{n}</a>)}
+        {NAV.map((n) => <a key={n} href={getNavHref(n)}>{n}</a>)}
       </motion.div>
 
       <Sheet>
@@ -33,7 +34,7 @@ export default function Navigation() {
         </SheetTrigger>
         <SheetContent side="top" className="lpl-drawer-sheet">
           {NAV.map((n) => (
-            <a key={n} href={`#${slug(n)}`} className="lpl-drawer-link">{n}</a>
+            <a key={n} href={getNavHref(n)} className="lpl-drawer-link">{n}</a>
           ))}
         </SheetContent>
       </Sheet>

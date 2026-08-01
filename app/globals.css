@@ -19,10 +19,18 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+section[id] {
+  scroll-margin-top: 80px;
 }
 
 .lpl{
@@ -371,5 +379,6 @@ body {
   .lpl-row,.lpl-foot-cols{grid-template-columns:1fr;}
 }
 @media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
   .lpl *{transition:none!important;animation:none!important;}
 }
