@@ -250,6 +250,7 @@ body {
 .lpl a.lpl-detail svg,
 .lpl .lpl-detail svg{color:var(--clay);flex:0 0 auto;}
 .lpl-field{display:flex;flex-direction:column;gap:8px;margin-bottom:22px;}
+.lpl-field > *{margin:0 !important;}
 .lpl-field label{font-family:var(--utility);font-size:.62rem;letter-spacing:.2em;
   text-transform:uppercase;color:rgba(243,238,230,.55);}
 .lpl-field input,.lpl-field select,.lpl-field textarea{
@@ -261,6 +262,7 @@ body {
 .lpl-field input:focus,.lpl-field select:focus,.lpl-field textarea:focus{
   border-color:var(--clay);outline:none;}
 .lpl-field select option{background:#221D18;color:#F3EEE6;}
+.lpl-error{font-family:var(--utility);font-size:.75rem;color:#d97979;margin-top:6px;line-height:1.4;}
 .lpl-row{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
 .lpl-sent{font-family:var(--display);font-size:1.55rem;font-style:italic;
   color:var(--parchment);padding:40px 0;line-height:1.5;}

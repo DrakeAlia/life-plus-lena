@@ -2,11 +2,14 @@
 
 import { useState } from "react";
 import { Mail, Phone, User } from "lucide-react";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import * as z from "zod";
 import { motion, rise } from "@/components/Motion";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
+import { Spinner } from "@/components/ui/spinner";
 import {
   Select,
   SelectContent,
@@ -14,10 +17,47 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+
+const formSchema = z.object({
+  name: z.string().min(2, "Name must be at least 2 characters"),
+  email: z.string().email("Please enter a valid email address"),
+  project: z.string().min(1, "Please select a project type"),
+  timeline: z.string().optional(),
+  note: z.string().min(10, "Message must be at least 10 characters"),
+});
+
+type FormValues = z.infer<typeof formSchema>;
 
 export default function ContactSection() {
   const [sent, setSent] = useState(false);
-  const [form, setForm] = useState({ name: "", email: "", project: "Full-home design", timeline: "", note: "" });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const form = useForm<FormValues>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      project: "Full-home design",
+      timeline: "",
+      note: "",
+    },
+  });
+
+  const onSubmit = async (data: FormValues) => {
+    setIsSubmitting(true);
+    // Simulate API call
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+    setIsSubmitting(false);
+    setSent(true);
+  };
 
   return (
     <section id="contact" className="lpl-contact lpl-pad lpl-sec">
@@ -45,69 +85,111 @@ export default function ContactSection() {
           {sent ? (
             <p className="lpl-sent">Thank you — your note is on its way. I'll be in touch to set up a call.</p>
           ) : (
-            <div>
-              <div className="lpl-row">
-                <div className="lpl-field">
-                  <Label htmlFor="f-name">Your name</Label>
-                  <Input
-                    id="f-name"
-                    autoComplete="name"
-                    value={form.name}
-                    onChange={(e) => setForm({ ...form, name: e.target.value })}
-                    className="lpl-input"
+            <Form {...form}>
+              <form onSubmit={form.handleSubmit(onSubmit)}>
+                <div className="lpl-row">
+                  <FormField
+                    control={form.control}
+                    name="name"
+                    render={({ field }) => (
+                      <FormItem className="lpl-field">
+                        <FormLabel>Your name</FormLabel>
+                        <FormControl>
+                          <Input
+                            autoComplete="name"
+                            className="lpl-input"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage className="lpl-error" />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => (
+                      <FormItem className="lpl-field">
+                        <FormLabel>Email</FormLabel>
+                        <FormControl>
+                          <Input
+                            type="email"
+                            inputMode="email"
+                            autoComplete="email"
+                            className="lpl-input"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage className="lpl-error" />
+                      </FormItem>
+                    )}
                   />
                 </div>
-                <div className="lpl-field">
-                  <Label htmlFor="f-email">Email</Label>
-                  <Input
-                    id="f-email"
-                    type="email"
-                    inputMode="email"
-                    autoComplete="email"
-                    value={form.email}
-                    onChange={(e) => setForm({ ...form, email: e.target.value })}
-                    className="lpl-input"
+                <div className="lpl-row">
+                  <FormField
+                    control={form.control}
+                    name="project"
+                    render={({ field }) => (
+                      <FormItem className="lpl-field">
+                        <FormLabel>Project type</FormLabel>
+                        <Select onValueChange={field.onChange} defaultValue={field.value}>
+                          <FormControl>
+                            <SelectTrigger className="lpl-input">
+                              <SelectValue />
+                            </SelectTrigger>
+                          </FormControl>
+                          <SelectContent>
+                            <SelectItem value="Full-home design">Full-home design</SelectItem>
+                            <SelectItem value="Room refresh">Room refresh</SelectItem>
+                            <SelectItem value="New build">New build</SelectItem>
+                            <SelectItem value="Design consultation">Design consultation</SelectItem>
+                          </SelectContent>
+                        </Select>
+                        <FormMessage className="lpl-error" />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="timeline"
+                    render={({ field }) => (
+                      <FormItem className="lpl-field">
+                        <FormLabel>Ideal timeline</FormLabel>
+                        <FormControl>
+                          <Input
+                            placeholder="e.g. this fall"
+                            className="lpl-input"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage className="lpl-error" />
+                      </FormItem>
+                    )}
                   />
                 </div>
-              </div>
-              <div className="lpl-row">
-                <div className="lpl-field">
-                  <Label htmlFor="f-project">Project type</Label>
-                  <Select value={form.project} onValueChange={(value) => setForm({ ...form, project: value })}>
-                    <SelectTrigger id="f-project" className="lpl-input">
-                      <SelectValue />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="Full-home design">Full-home design</SelectItem>
-                      <SelectItem value="Room refresh">Room refresh</SelectItem>
-                      <SelectItem value="New build">New build</SelectItem>
-                      <SelectItem value="Design consultation">Design consultation</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-                <div className="lpl-field">
-                  <Label htmlFor="f-time">Ideal timeline</Label>
-                  <Input
-                    id="f-time"
-                    placeholder="e.g. this fall"
-                    value={form.timeline}
-                    onChange={(e) => setForm({ ...form, timeline: e.target.value })}
-                    className="lpl-input"
-                  />
-                </div>
-              </div>
-              <div className="lpl-field">
-                <Label htmlFor="f-note">Tell me about your home</Label>
-                <Textarea
-                  id="f-note"
-                  rows={3}
-                  value={form.note}
-                  onChange={(e) => setForm({ ...form, note: e.target.value })}
-                  className="lpl-input"
+                <FormField
+                  control={form.control}
+                  name="note"
+                  render={({ field }) => (
+                    <FormItem className="lpl-field">
+                      <FormLabel>Tell me about your home</FormLabel>
+                      <FormControl>
+                        <Textarea
+                          rows={3}
+                          className="lpl-input"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage className="lpl-error" />
+                    </FormItem>
+                  )}
                 />
-              </div>
-              <Button variant="linen" onClick={() => setSent(true)}>Send my inquiry</Button>
-            </div>
+                <Button variant="linen" type="submit" disabled={isSubmitting}>
+                  {isSubmitting && <Spinner className="mr-2" />}
+                  Send my inquiry
+                </Button>
+              </form>
+            </Form>
           )}
         </motion.div>
       </div>
