@@ -37,8 +37,6 @@ export default function PhilosophySection() {
 
       <section className="lpl-statement lpl-pad lpl-sec">
         <motion.div className="in" {...rise}>
-          <p>I don't design from the outside in.</p>
-          <p className="accent">I design from the inside out.</p>
           <p className="foot">
             Every home should support the life unfolding within it. A beautiful room is not
             the goal — it is the result. The real objective is creating spaces that are

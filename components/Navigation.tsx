@@ -19,7 +19,6 @@ export default function Navigation() {
         initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9 }}>
         <div className="sup">Life Plus</div>
         <div className="name">LENA</div>
-        <div className="sub">Designing life<br />from the inside out</div>
       </motion.a>
       <motion.div className="lpl-links"
         initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 0.35 }}>
