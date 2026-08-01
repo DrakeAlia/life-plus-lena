@@ -57,8 +57,7 @@ export default function Hero() {
           </p>
           <div style={{ width: 46, height: 1, background: "var(--clay)", margin: "30px auto" }} />
           <p className="lpl-body" style={{ maxWidth: "60ch", margin: "0 auto" }}>
-            I believe the environments we create shape the lives we live. My work is less
-            about decorating and more about designing human experience.
+            I believe the environments we create shape the lives we live.
           </p>
         </motion.div>
       </section>
