@@ -2,7 +2,6 @@ import StickyBar from "@/components/StickyBar";
 import Hero from "@/components/Hero";
 import ScienceSection from "@/components/ScienceSection";
 import PhilosophySection from "@/components/PhilosophySection";
-import RoomsSection from "@/components/RoomsSection";
 import PortfolioBand from "@/components/PortfolioBand";
 import ServicesSection from "@/components/ServicesSection";
 import SuccessSection from "@/components/SuccessSection";
@@ -19,7 +18,6 @@ export default function Home() {
       <Hero />
       <ScienceSection />
       <PhilosophySection />
-      <RoomsSection />
       <PortfolioBand />
       <ServicesSection />
       <SuccessSection />
