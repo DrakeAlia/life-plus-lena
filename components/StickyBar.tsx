@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { NAV } from "@/content/site";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 const slug = (s: string) => s.toLowerCase().replace(/\s+/g, "-");
 
@@ -18,7 +20,7 @@ export default function StickyBar() {
     <div className={`lpl-sticky ${stuck ? "is-on" : ""}`}>
       <a href="#top" className="mark">LIFE PLUS LENA</a>
       <nav>{NAV.slice(1).map((n) => <a key={n} href={`#${slug(n)}`}>{n}</a>)}</nav>
-      <a href="#contact" className="lpl-btn lpl-btn-dark" style={{ marginTop: 0, minHeight: 42, padding: "0 22px" }}>
+      <a href="#contact" className={cn(buttonVariants({ variant: "espresso" }), "mt-0 min-h-[42px] px-[22px]")}>
         Start a project
       </a>
     </div>

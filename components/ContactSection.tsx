@@ -6,6 +6,7 @@ import { motion, rise } from "@/components/Motion";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { Button } from "@/components/ui/button";
 import {
   Select,
   SelectContent,
@@ -105,7 +106,7 @@ export default function ContactSection() {
                   className="lpl-input"
                 />
               </div>
-              <button className="lpl-btn" onClick={() => setSent(true)}>Send my inquiry</button>
+              <Button variant="linen" onClick={() => setSent(true)}>Send my inquiry</Button>
             </div>
           )}
         </motion.div>

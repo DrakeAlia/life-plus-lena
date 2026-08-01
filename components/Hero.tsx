@@ -3,6 +3,7 @@
 import Scene from "@/components/Scene";
 import Navigation from "@/components/Navigation";
 import { motion } from "@/components/Motion";
+import { buttonVariants } from "@/components/ui/button";
 
 export default function Hero() {
   return (
@@ -25,7 +26,7 @@ export default function Hero() {
             transition={{ duration: 1, delay: 0.45 }}>
             I don't begin with furniture. I begin with you.
           </motion.p>
-          <motion.a href="#philosophy" className="lpl-btn"
+          <motion.a href="#philosophy" className={buttonVariants({ variant: "linen" })}
             initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.7 }}>
             Learn my philosophy
           </motion.a>
