@@ -28,7 +28,6 @@ export const MY_QUESTIONS = [
 ];
 
 export const CLOSING = [
-  "Only after those questions are answered do I begin designing.",
   "Furniture placement is never the starting point.",
   "It is the expression of a deeper intention.",
 ];
