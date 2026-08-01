@@ -1,7 +1,9 @@
 const WOOD = "#6E4F35", GLOW = "#F5CE95";
 
+export type SceneKind = "desert" | "living" | "kitchen" | "bedroom" | "patio" | "portrait" | "cactus" | "still" | "exterior" | "gather";
+
 type SceneProps = {
-  kind: "desert" | "living" | "kitchen" | "bedroom" | "patio" | "portrait" | "cactus" | "still" | "exterior" | "gather";
+  kind: SceneKind;
 };
 
 export default function Scene({ kind }: SceneProps) {

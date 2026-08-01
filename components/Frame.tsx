@@ -1,10 +1,10 @@
 import { CSSProperties, ReactNode } from "react";
-import Scene from "./Scene";
+import Scene, { type SceneKind } from "./Scene";
 
 type FrameProps = {
   src?: string;
   alt?: string;
-  scene?: "desert" | "living" | "kitchen" | "bedroom" | "patio" | "portrait" | "cactus" | "still" | "exterior" | "gather";
+  scene?: SceneKind;
   style?: CSSProperties;
   children?: ReactNode;
 };

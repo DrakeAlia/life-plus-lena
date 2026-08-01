@@ -1,10 +1,12 @@
+import type { SceneKind } from "@/components/Scene";
+
 export type Room = {
   t: string;
   c: string;
-  s: string;
+  s: SceneKind;
 };
 
-export type Ritual = [string, string];
+export type Ritual = [string, SceneKind];
 
 export const ROOMS: Room[] = [
   { t: "Living Rooms", c: "Layered textures, natural light, and rooms that bring people together.", s: "living" },
