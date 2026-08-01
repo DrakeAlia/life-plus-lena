@@ -38,9 +38,9 @@ export default function ServicesSection() {
         ))}
       </div>
 
-      <motion.div {...rise} style={{ marginTop: "clamp(48px,5vw,80px)" }}>
+      <motion.div {...rise} style={{ marginTop: "clamp(48px,5vw,80px)", textAlign: "center" }}>
         <div className="lpl-eyebrow">How we work together</div>
-        <h2 className="lpl-h2" style={{ marginTop: 12 }}>Three ways to begin.</h2>
+        <h2 className="lpl-h2" style={{ marginTop: 12, maxWidth: "26ch", marginLeft: "auto", marginRight: "auto" }}>Three ways to begin.</h2>
       </motion.div>
       <div className="lpl-tiers">
         {TIERS.map((t, i) => (
