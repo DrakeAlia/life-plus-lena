@@ -39,6 +39,7 @@ type FormValues = z.infer<typeof formSchema>;
 export default function ContactSection() {
   const [sent, setSent] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -53,10 +54,34 @@ export default function ContactSection() {
 
   const onSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-    setIsSubmitting(false);
-    setSent(true);
+    setError(null);
+
+    const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_ID;
+    if (!formspreeId) {
+      setError("Form configuration error. Please contact lifepluslena@gmail.com directly.");
+      setIsSubmitting(false);
+      return;
+    }
+
+    try {
+      const response = await fetch(`https://formspree.io/f/${formspreeId}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to send message");
+      }
+
+      setIsSubmitting(false);
+      setSent(true);
+    } catch (err) {
+      setIsSubmitting(false);
+      setError("Something went wrong. Please try again or email lifepluslena@gmail.com directly.");
+    }
   };
 
   return (
@@ -87,6 +112,11 @@ export default function ContactSection() {
           ) : (
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)}>
+                {error && (
+                  <div className="lpl-error" style={{ marginBottom: 20, padding: "12px 16px", background: "rgba(220, 38, 38, 0.1)", borderRadius: 4 }}>
+                    {error}
+                  </div>
+                )}
                 <div className="lpl-row">
                   <FormField
                     control={form.control}

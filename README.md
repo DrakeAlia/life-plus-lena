@@ -20,6 +20,16 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Environment Variables
+
+Create a `.env.local` file in the root directory with the following variable:
+
+```
+NEXT_PUBLIC_FORMSPREE_ID=your_formspree_id_here
+```
+
+The contact form uses [Formspree](https://formspree.io) to handle submissions. Sign up for a free account at https://formspree.io and add your form endpoint ID to enable contact form functionality.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
