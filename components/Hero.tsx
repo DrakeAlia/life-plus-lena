@@ -1,6 +1,6 @@
 "use client";
 
-import Scene from "@/components/Scene";
+import Image from "next/image";
 import Navigation from "@/components/Navigation";
 import { motion } from "@/components/Motion";
 import { buttonVariants } from "@/components/ui/button";
@@ -12,7 +12,15 @@ export default function Hero() {
         <motion.div className="lpl-hero-art" aria-hidden="true"
           initial={{ opacity: 0, scale: 1.06 }} animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.6 }}>
-          <Scene kind="desert" />
+          <Image
+            src="/images/hero-lena.webp"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            quality={85}
+            style={{ objectFit: "cover", objectPosition: "center" }}
+          />
         </motion.div>
 
         <Navigation />
