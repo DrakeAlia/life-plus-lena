@@ -6,9 +6,9 @@ import { motion, rise, stagger } from "@/components/Motion";
 export default function ScienceSection() {
   return (
     <section id="why-it-matters" className="lpl-pad lpl-sec">
-      <motion.div {...rise} style={{ textAlign: "center" }}>
+      <motion.div {...rise} className="lpl-sec-head" style={{ "--head-width": "22ch" } as React.CSSProperties}>
         <div className="lpl-eyebrow">The Science Behind Beautiful Living</div>
-        <h2 className="lpl-h2" style={{ marginTop: 14, maxWidth: "22ch", marginLeft: "auto", marginRight: "auto" }}>
+        <h2 className="lpl-h2" style={{ marginTop: 14 }}>
           Why does this matter?
         </h2>
       </motion.div>

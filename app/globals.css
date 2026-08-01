@@ -59,6 +59,9 @@ section[id] {
 .lpl-h2{font-family:var(--display);font-weight:300;line-height:1.12;
   font-size:clamp(1.85rem,2.9vw,2.5rem);}
 .lpl-body{font-size:.92rem;line-height:1.9;color:var(--umber);font-weight:300;}
+.lpl-sec-head{text-align:center;}
+.lpl-sec-head > *{margin-left:auto;margin-right:auto;}
+.lpl-sec-head > .lpl-h2{max-width:var(--head-width,26ch);}
 
 /* ---------- frames ---------- */
 .lpl-frame{position:relative;overflow:hidden;background:var(--linen);}

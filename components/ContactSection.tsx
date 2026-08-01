@@ -87,10 +87,10 @@ export default function ContactSection() {
   return (
     <section id="contact" className="lpl-contact lpl-pad lpl-sec">
       <div className="lpl-contact-grid">
-        <motion.div {...rise} style={{ textAlign: "center" }}>
+        <motion.div {...rise} className="lpl-sec-head">
           <div className="lpl-eyebrow" style={{ color: "rgba(243,238,230,.45)" }}>Contact</div>
           <h2 className="lpl-display" style={{ marginTop: 16 }}>Tell me how you want to live.</h2>
-          <p className="lpl-body" style={{ color: "rgba(243,238,230,.66)", marginTop: 22, maxWidth: "58ch", marginLeft: "auto", marginRight: "auto" }}>
+          <p className="lpl-body" style={{ color: "rgba(243,238,230,.66)", marginTop: 22, maxWidth: "58ch" }}>
             Share a little about your home and I'll reach out to schedule an introductory call.
           </p>
           <div style={{ marginTop: 32 }}>

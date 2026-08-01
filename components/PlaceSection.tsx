@@ -7,10 +7,10 @@ import { motion, rise, stagger } from "@/components/Motion";
 export default function PlaceSection() {
   return (
     <section className="lpl-pad lpl-sec">
-      <motion.div {...rise} style={{ textAlign: "center" }}>
+      <motion.div {...rise} className="lpl-sec-head">
         <div className="lpl-eyebrow">Inspired by Scottsdale</div>
         <h2 className="lpl-h2" style={{ margin: "12px auto 16px" }}>Natural beauty. Elevated living.</h2>
-        <p className="lpl-body" style={{ maxWidth: "58ch", marginLeft: "auto", marginRight: "auto" }}>
+        <p className="lpl-body" style={{ maxWidth: "58ch" }}>
           From the colors of the Sonoran Desert to the way we gather in the Southwest,
           Scottsdale offers endless inspiration for homes that feel connected to place.
         </p>

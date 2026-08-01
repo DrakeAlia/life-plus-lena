@@ -7,12 +7,12 @@ import { motion, rise, fade, stagger } from "@/components/Motion";
 export default function ServicesSection() {
   return (
     <section id="services" className="lpl-pad lpl-sec">
-      <motion.div {...rise} style={{ textAlign: "center" }}>
+      <motion.div {...rise} className="lpl-sec-head">
         <div className="lpl-eyebrow">Services</div>
-        <h2 className="lpl-h2" style={{ marginTop: 12, maxWidth: "26ch", marginLeft: "auto", marginRight: "auto" }}>
+        <h2 className="lpl-h2" style={{ marginTop: 12 }}>
           What makes Life Plus Lena different
         </h2>
-        <p className="lpl-body" style={{ marginTop: 22, maxWidth: "58ch", fontSize: "1.05rem", marginLeft: "auto", marginRight: "auto" }}>
+        <p className="lpl-body" style={{ marginTop: 22, maxWidth: "58ch", fontSize: "1.05rem" }}>
           Most designers begin with the room.<br />
           <span style={{ color: "var(--espresso)" }}>I begin with the people.</span>
         </p>
@@ -38,9 +38,9 @@ export default function ServicesSection() {
         ))}
       </div>
 
-      <motion.div {...rise} style={{ marginTop: "clamp(48px,5vw,80px)", textAlign: "center" }}>
+      <motion.div {...rise} className="lpl-sec-head" style={{ marginTop: "clamp(48px,5vw,80px)" }}>
         <div className="lpl-eyebrow">How we work together</div>
-        <h2 className="lpl-h2" style={{ marginTop: 12, maxWidth: "26ch", marginLeft: "auto", marginRight: "auto" }}>Three ways to begin.</h2>
+        <h2 className="lpl-h2" style={{ marginTop: 12 }}>Three ways to begin.</h2>
       </motion.div>
       <div className="lpl-tiers">
         {TIERS.map((t, i) => (

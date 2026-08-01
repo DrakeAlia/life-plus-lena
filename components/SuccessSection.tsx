@@ -6,12 +6,12 @@ import { motion, rise, stagger } from "@/components/Motion";
 export default function SuccessSection() {
   return (
     <section className="lpl-pad lpl-sec" style={{ background: "var(--linen)" }}>
-      <motion.div {...rise} style={{ textAlign: "center" }}>
+      <motion.div {...rise} className="lpl-sec-head" style={{ "--head-width": "30ch" } as React.CSSProperties}>
         <div className="lpl-eyebrow">What success looks like</div>
-        <h2 className="lpl-h2" style={{ marginTop: 12, maxWidth: "30ch", marginLeft: "auto", marginRight: "auto" }}>
+        <h2 className="lpl-h2" style={{ marginTop: 12 }}>
           Success isn't measured by compliments about a room.
         </h2>
-        <p className="lpl-body" style={{ marginTop: 18, maxWidth: "58ch", marginLeft: "auto", marginRight: "auto" }}>It is measured by comments like:</p>
+        <p className="lpl-body" style={{ marginTop: 18, maxWidth: "58ch" }}>It is measured by comments like:</p>
       </motion.div>
       <div className="lpl-outcomes">
         {OUTCOMES.map((o, i) => (
