@@ -16,7 +16,7 @@ export const PHILOSOPHY: PhilosophySection[] = [
       { t: "line", v: "For years I believed I was in the business of designing homes." },
       { t: "line", v: "I wasn't." },
       { t: "line", v: "I was helping people create better lives through the places they call home." },
-      { t: "prose", v: "Like many entrepreneurs, my path evolved. Opportunities in home staging and interior design allowed me to build a successful business and develop valuable experience. Yet beneath every project was the same question that first inspired me to create Life Plus Lena in the first place:" },
+      { t: "prose", v: "Like many entrepreneurs, my path evolved. Opportunities in home staging and interior design in Seattle allowed me to build a successful business and develop valuable experience. Yet beneath every project was the same question that first inspired me to create Life Plus Lena in the first place:" },
       { t: "key", v: "How can a home help someone live more beautifully?" },
       { t: "line", v: "Today, I realize that question has always been at the heart of my work." },
       { t: "line", v: "Design was never the destination." },
