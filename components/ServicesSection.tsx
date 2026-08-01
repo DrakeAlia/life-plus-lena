@@ -12,10 +12,6 @@ export default function ServicesSection() {
         <h2 className="lpl-h2" style={{ marginTop: 12 }}>
           What makes Life Plus Lena different
         </h2>
-        <p className="lpl-body" style={{ marginTop: 22, maxWidth: "58ch", fontSize: "1.05rem" }}>
-          Most designers begin with the room.<br />
-          <span style={{ color: "var(--espresso)" }}>I begin with the people.</span>
-        </p>
       </motion.div>
 
       <motion.div className="lpl-ask" {...fade}>
