@@ -10,7 +10,7 @@ export const TIERS: Tier[] = [
     l: ["Two hours, room by room", "Paint, layout, and lighting direction", "Written recap to keep"] },
   { n: "Two", t: "Room Refresh", p: "One room, reworked with what you have and a few things you don't.",
     l: ["Floor plan and furniture layout", "Curated shopping list with links", "Styling day when it all arrives"] },
-  { n: "Three", t: "Whole Home Transformation", p: "Whether you're refreshing your current home or planning your next chapter, together we will create a complete design vision that reflects your lifestyle.",
+  { n: "Three", t: "Full-Home Design", p: "Whether you're refreshing your current home or planning your next chapter, together we will create a complete design vision that reflects your lifestyle.",
     l: ["AI remodeling concepts", "Interior furnishings & styling", "Material and finish recommendations", "Room-by-room design plan"] },
 ];
 
