@@ -41,13 +41,6 @@ export const PHILOSOPHY: PhilosophySection[] = [
     title: "My Philosophy",
     lines: [
       { t: "line", v: "Before I think about furniture, fabrics, or finishes, I want to understand:" },
-      { t: "questions", v: [
-        "How do you want your life to feel?",
-        "What season of life are you in?",
-        "Where do you find peace?",
-        "How do you gather with family and friends?",
-        "What memories do you hope to create here?",
-      ] },
       { t: "line", v: "Only after understanding those answers do I begin designing." },
       { t: "prose", v: "Because beautiful homes are created from meaningful lives — not the other way around." },
     ],
